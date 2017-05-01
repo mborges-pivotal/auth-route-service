@@ -1,0 +1,11 @@
+---
+applications:
+- name: auth-route-service
+  memory: 1024M
+  instances: 1
+  random-route: true
+  path: target/auth-route-service-1.0.0.BUILD-SNAPSHOT.jar
+  buildpack: https://github.com/cloudfoundry/java-buildpack.git
+  env:
+     SKIP_SSL_VALIDATION: "true"
+     GRANT_TYPE: authorization_code
